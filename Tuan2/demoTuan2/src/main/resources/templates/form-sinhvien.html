@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+
+	<title>Quáº£n LÃ½ Sinh ViÃªn - Form</title>
+	<!--
+
+    Template 2106 Soft Landing
+
+	http://www.tooplate.com/view/2106-soft-landing
+
+    -->
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+     <meta name="description" content="">
+     <meta name="keywords" content="">
+     <meta name="team" content="">
+     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+     <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+     <link rel="stylesheet" th:href="@{/css/owl.carousel.css}">
+     <link rel="stylesheet" th:href="@{/css/owl.theme.default.min.css}">
+     <link rel="stylesheet" th:href="@{/css/font-awesome.min.css}">
+
+     <!-- MAIN CSS -->
+     <link rel="stylesheet" th:href="@{/css/tooplate-style.css}">
+
+</head>
+<body>
+
+     <!-- PRE LOADER -->
+     <section class="preloader">
+          <div class="spinner">
+
+               <span class="spinner-rotate"></span>
+               
+          </div>
+     </section>
+
+
+     <!-- MENU -->
+     <section class="navbar custom-navbar navbar-fixed-top" role="navigation">
+          <div class="container">
+
+               <div class="navbar-header">
+                    <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                         <span class="icon icon-bar"></span>
+                         <span class="icon icon-bar"></span>
+                         <span class="icon icon-bar"></span>
+                    </button>
+
+                    <!-- lOGO TEXT HERE -->
+                    <a th:href="@{/}" class="navbar-brand">Soft Landing</a>
+               </div>
+
+               <!-- MENU LINKS -->
+               <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav">
+                         <li><a th:href="@{/#home}" class="smoothScroll">Home</a></li>
+                         <li><a th:href="@{/#feature}" class="smoothScroll">Features</a></li>
+                         <li><a th:href="@{/#about}" class="smoothScroll">About us</a></li>
+                         <li><a th:href="@{/#pricing}" class="smoothScroll">Pricing</a></li>
+                         <li><a th:href="@{/#contact}" class="smoothScroll">Contact</a></li>
+                         <li class="active"><a th:href="@{/sinhvien}">Quáº£n lÃ½ Sinh ViÃªn</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                         <li><a href="#">Say hello - <span>info@soft.co</span></a></li>
+                    </ul>
+               </div>
+
+          </div>
+     </section>
+
+
+     <!-- FORM SECTION -->
+     <section id="home" data-stellar-background-ratio="0.5">
+          <div class="overlay"></div>
+          <div class="container">
+               <div class="row">
+
+                    <div class="col-md-offset-2 col-md-8 col-sm-12">
+                         <div class="section-title">
+                              <h2 style="color: white;">Nháºp ThÃ´ng Tin Sinh ViÃªn</h2>
+                              <p style="color: #f0f0f0;">Vui lÃ²ng Ä‘iá»n Ä‘áº§y Ä‘á»§ cÃ¡c thÃ´ng tin bÃªn dÆ°á»›i.</p>
+                         </div>
+                     </div>
+                    
+                    <div class="col-md-offset-3 col-md-6 col-sm-12">
+                         <!-- Form starts here -->
+                         <form th:action="@{/sinhvien}" th:object="${sinhVien}" method="post" role="form" style="text-align: left;">
+                              
+                              <div class="form-group">
+                                  <label for="ten" style="color: white;">TÃªn Sinh ViÃªn</label>
+                                  <input type="text" class="form-control" id="ten" th:field="*{ten}" 
+                                         placeholder="Nháºp tÃªn sinh viÃªn" 
+                                         th:classappend="${#fields.hasErrors('ten') ? 'is-invalid' : ''}">
+                                  <p class="text-danger" style="color: #dd9534f;" th:if="${#fields.hasErrors('ten')}" th:errors="*{ten}"></p>
+                              </div>
+                              
+                              <div class="form-group">
+                                  <label for="tuoi" style="color: white;">Tuá»•i</label>
+                                  <input type="number" class="form-control" id="tuoi" th:field="*{tuoi}" 
+                                         placeholder="Nháºp tuá»•i (18-100)"
+                                         th:classappend="${#fields.hasErrors('tuoi') ? 'is-invalid' : ''}">
+                                  <p class="text-danger" style="color: #d9534f;" th:if="${#fields.hasErrors('tuoi')}" th:errors="*{tuoi}"></p>
+                              </div>
+                              
+                              <div class="form-group">
+                                  <label for="khoa" style="color: white;">Khoa</label>
+                                  <input type="text" class="form-control" id="khoa" th:field="*{khoa}" 
+                                         placeholder="Nháºp tÃªn khoa (chá»‰ chá»¯ cÃ¡i)"
+                                         th:classappend="${#fields.hasErrors('khoa') ? 'is-invalid' : ''}">
+                                  <p class="text-danger" style="color: #d9534f;" th:if="${#fields.hasErrors('khoa')}" th:errors="*{khoa}"></p>
+                              </div>
+                              
+                              <div class="form-group">
+                                   <button type="submit" class="form-control" style="background-color: #4CAF50; color: white;">Gá»i ThÃ´ng Tin</button>
+                              </div>
+                              
+                         </form>
+                    </div>
+
+               </div>
+          </div>
+     </section>
+
+
+     <!-- FOOTER -->
+     <footer id="footer" data-stellar-background-ratio="0.5">
+          <div class="container">
+               <div class="row">
+
+                    <div class="copyright-text col-md-12 col-sm-12">
+                         <div class="col-md-6 col-sm-6">
+                              <p>Copyright &copy; 2018 Company Name - Design:
+               				<a rel="nofollow" href="http://tooplate.com">Tooplate</a></p>
+                         </div>
+
+                         <div class="col-md-6 col-sm-6">
+                              <ul class="social-icon">
+                                   <li><a href="#" class="fa fa-facebook-square" attr="facebook icon"></a></li>
+                                   <li><a href="#" class="fa fa-twitter"></a></li>
+                                   <li><a href="#" class="fa fa-instagram"></a></li>
+                              </ul>
+                         </div>
+                    </div>
+
+               </div>
+          </div>
+     </footer>
+
+
+     <!-- SCRIPTS -->
+     <script th:src="@{/js/jquery.js}"></script>
+     <script th:src="@{/js/bootstrap.min.js}"></script>
+     <script th:src="@{/js/jquery.stellar.min.js}"></script>
+     <script th:src="@{/js/owl.carousel.min.js}"></script>
+     <script th:src="@{/js/smoothscroll.js}"></script>
+     <script th:src="@{/js/custom.js}"></script>
+
+</body>
+</html>
